@@ -1,22 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.scss';
 import Logo from '../../assets/images/logo.png';
+
+const links = {
+	Home: 'Home',
+	Events: 'Events',
+}
 
 const Header = () => {
     return (
         <header className="Header">
 			<div className="Header-Inner">
-				<a href="index.html" className="Header-LogoContainer">
+				<Link to="/" className="Header-LogoContainer">
 					<img src={Logo} alt="Logo" className="Header-Logo"/>
-				</a>
+				</Link>
                 <div className="Header-NavHamburger">
                     <div className="Header-NavHamburgerLine"></div>
                     <div className="Header-NavHamburgerLine"></div>
                     <div className="Header-NavHamburgerLine"></div>
                 </div>
 				<nav className="Header-Nav">
-					<a href="index.html" className="Header-NavItem">Home</a>
-					<a href="events.html" className="Header-NavItem">Events</a>
+					<Link to="/" className="Header-NavItem">{links.Home}</Link>
+					<Link to="/events" className="Header-NavItem">{links.Events}</Link>
 				</nav>
 			</div>
 		</header>
