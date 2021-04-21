@@ -18,6 +18,7 @@ const EventsCard = ({
     buttonText
 }) => {
     return (
+		<section class="SectionEvents">
 			<div className="EventCard">
 				<h2 className="EventCard-Title">{eventTitle1}</h2>
 				<div className="EventCard-Content">
@@ -44,6 +45,7 @@ const EventsCard = ({
                  </div>
                  <Button text={buttonText}/>
              </div>
+		</section>
     );
 }
 

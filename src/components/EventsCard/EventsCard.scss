@@ -4,12 +4,17 @@
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	border-radius: 6px;
 	padding: 10px;
+    width: 90%;
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
 
     &-Title {
         font-size: 18px;
         border-bottom: 1px solid #d0d0d0;
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 15px;
+        padding: 15px;
      }
     
      &-Content {
@@ -22,14 +27,9 @@
         margin-bottom: 16px;
      }
 
-     &-ContentRow:last-child {
-         margin-bottom: 0;
-     }
-     
     &-Item:last-child {
-        text-align: left;
+        text-align: right;
     }
-
     &-ItemTitle {
         font-size: 12px;
 	    margin-bottom: 4px;
