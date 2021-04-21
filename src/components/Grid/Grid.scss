@@ -19,6 +19,12 @@
         &_3 {
             padding: 0 84px;
         }
+        
+        &_4 {
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 10px;
+            padding: 0 84px;
+        }
     }
 
 }
