@@ -9,7 +9,7 @@ function Events() {
         <Section title="Events">
           <Grid columns="4">
           <EventsCard
-                        eventTitle1="UX/UI  workshop"
+                        eventTitle1="UX/UI workshop"
                         itemTitle1="Lokacija"
                         itemValue1="Hodnik FOI-a"
                         
@@ -24,7 +24,7 @@ function Events() {
                         buttonText="Find out more"
                     />
           <EventsCard
-                       eventTitle1="UX/UI  workshop"
+                       eventTitle1="UX/UI workshop"
                        itemTitle1="Lokacija"
                        itemValue1="Hodnik FOI-a"
                        
@@ -39,7 +39,7 @@ function Events() {
                        buttonText="Find out more"
                     />
           <EventsCard
-                      eventTitle1="UX/UI  workshop"
+                      eventTitle1="UX/UI workshop"
                       itemTitle1="Lokacija"
                       itemValue1="Hodnik FOI-a"
                       
@@ -54,7 +54,7 @@ function Events() {
                       buttonText="Find out more"
                     />
           <EventsCard
-                      eventTitle1="UX/UI  workshop"
+                      eventTitle1="UX/UI workshop"
                       itemTitle1="Lokacija"
                       itemValue1="Hodnik FOI-a"
                       
@@ -69,7 +69,7 @@ function Events() {
                       buttonText="Find out more"
                     />
           <EventsCard
-                      eventTitle1="UX/UI  workshop"
+                      eventTitle1="UX/UI workshop"
                       itemTitle1="Lokacija"
                       itemValue1="Hodnik FOI-a"
                       
@@ -84,7 +84,7 @@ function Events() {
                       buttonText="Find out more"
                     />
           <EventsCard
-                      eventTitle1="UX/UI  workshop"
+                      eventTitle1="UX/UI workshop"
                       itemTitle1="Lokacija"
                       itemValue1="Hodnik FOI-a"
                       
@@ -99,7 +99,7 @@ function Events() {
                       buttonText="Find out more"
                     />
           <EventsCard
-                      eventTitle1="UX/UI  workshop"
+                      eventTitle1="UX/UI workshop"
                       itemTitle1="Lokacija"
                       itemValue1="Hodnik FOI-a"
                       
