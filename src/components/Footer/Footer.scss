@@ -1,18 +1,16 @@
-.Footer{
-	
-	padding: 20px;
-	background-color: #333;
-	/*
-	position: sticky;
-	top: 100%;*/
+@import '../Theme/theme';
 
+.Footer{
+	padding: 20px;
+	background-color: $darkGrey;
+	
     &-Description {
-        color: #d0d0d0;
+        color: $lightGrey;
         font-size: 12px;
         text-align: center;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and ($tablet) {
         padding: 30px;
 
         &-Description {

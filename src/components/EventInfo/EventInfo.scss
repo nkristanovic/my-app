@@ -1,3 +1,5 @@
+@import '../Theme/theme';
+
 .EventInfo {
     &-Figure{
         width: 100%;
@@ -39,15 +41,16 @@
 	    line-height: 150%;
     }
 
-    @media screen and (min-width: 500px) {
+    @media screen and ($mobileLarge) {
         &-Figure {
             height: 300px;
         }
     }
     
-    @media screen and (min-width: 768px) {
+    @media screen and ($tablet) {
         display: flex;
         justify-content: space-between;
+        
         &-SectionEvent {
             padding: 0 25px 64px;
         }
@@ -82,7 +85,7 @@
     }
     
     
-    @media screen and (min-width: 1024px) {
+    @media screen and ($desktop) {
         &-SectionEvent {
             padding: 0 0 64px;
             max-width: 930px;
@@ -117,7 +120,7 @@
         }
     }
     
-    @media screen and (min-width: 1300px) {
+    @media screen and ($desktopLarge) {
         &-SectionEvent {
             max-width: 1280px;
         }

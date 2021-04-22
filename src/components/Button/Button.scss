@@ -1,3 +1,5 @@
+@import '../Theme/theme';
+
 .Button {
     display: block;
     text-decoration: none;
@@ -6,16 +8,18 @@
     text-align: center;
     border: 1px solid #d33e3e;
     border-radius: 6px;
-    background: #d33e3e;
-    color: #fff;
-    transition: all 0.3s ease out;
+    background: $red;
+    color: $white;
+    transition: $transitionEase;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
+
     &:hover {
         cursor: pointer;
-        border-color:#e4b43c;
-        background: #e4b43c;
+        border-color: $yellow;
+        background: $yellow;
     }
+
     &:focus {
         outline: none;
     }
