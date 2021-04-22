@@ -19,7 +19,7 @@ const EventInfo = ({
         <section class="SectionEvent">
 			<div class="EventInfo">
 				<figure class="EventInfo-Figure">
-                <img src={image} alt="Design" class="EventInfo-Image"/> 
+                	<img src={image} alt="Design" class="EventInfo-Image"/> 
 				</figure>
 				<div class="EventInfo-Content">
 					<div class="EventInfo-ContentRow">

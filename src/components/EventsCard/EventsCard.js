@@ -44,7 +44,7 @@ const EventsCard = ({
 					</div>
                  </div>
                  <Button text={buttonText}/>
-             </div>
+            </div>
 		</section>
     );
 }

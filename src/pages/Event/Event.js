@@ -23,8 +23,9 @@ function Event() {
           itemValue4="Speck"
           buttonText="Prijavi se"
 
-          descripton="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia illo error vitae recusandae? Vel blanditiis ipsam autem, non architecto quia delectus, temporibus dolorem totam voluptas, modi officiis similique qui Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Odit sequi, et facere quaerat sit delectus possimus modi culpa, molestiae earum aperiam cum commodi explicabo eum labore, a quia numquam debitis."
+          descripton="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia illo error vitae recusandae? Vel blanditiis ipsam autem, non architecto quia delectus, 
+          temporibus dolorem totam voluptas, modi officiis similique qui Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sequi, et facere quaerat sit delectus 
+          possimus modi culpa, molestiae earum aperiam cum commodi explicabo eum labore, a quia numquam debitis."
         />
       </Section>
     </>           
