@@ -9,11 +9,13 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Events from './pages/Events/Events';
 import Event from './pages/Event/Event';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 class App extends Component {
   render() {
     return (
       <>
+        <ScrollToTop />
         <Header />
         <Main>
           <Route exact path="/" component={Home} />
