@@ -21,8 +21,8 @@ const Header = () => {
                     <div className="Header-NavHamburgerLine"></div>
                 </div>
 				<nav className="Header-Nav">
-					<Link to="/" className="Header-NavItem">{links.Home}</Link>
-					<Link to="/events" className="Header-NavItem">{links.Events}</Link>
+					<Link exact to="/" className="Header-NavItem">{links.Home}</Link>
+					<Link exact to="/events" className="Header-NavItem">{links.Events}</Link>
 				</nav>
 			</div>
 		</header>

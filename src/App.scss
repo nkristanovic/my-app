@@ -13,21 +13,22 @@ h1, h2, h3 {
 	margin: 0;
 }
 
-/* za footer da je na dnu*/
-
 html {
   height: 100%;
 }
+
 body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
   height: 100%;
 }
+
 #root {
   display: flex;
   height: 100%;
   flex-direction: column;
 }
+
 main {
   margin-top: 80px;
   flex: 1 0 auto;
