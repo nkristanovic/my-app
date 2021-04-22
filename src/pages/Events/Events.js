@@ -9,111 +9,125 @@ function Events() {
         <Section title="Events">
           <Grid columns="4">
           <EventsCard
-                        eventTitle1="UX/UI workshop"
-                        itemTitle1="Lokacija"
-                        itemValue1="Hodnik FOI-a"
+            eventTitle1="UX/UI workshop"
+            itemTitle1="Lokacija"
+            itemValue1="Hodnik FOI-a"
                         
-                        itemTitle2="Lokacija"
-                        itemValue2="Hodnik FOI-a"
+            itemTitle2="Datum i vrijeme"
+            itemValue2="14.10 (9:00-16:00h)"
                         
-                        itemTitle3="Lokacija"
-                        itemValue3="Hodnik FOI-a"
+            itemTitle3="Slobodna mjesta"
+            itemValue3="15/60"
                         
-                        itemTitle4="Lokacija"
-                        itemValue4="Hodnik FOI-a"
-                        buttonText="Find out more"
-                    />
+            itemTitle4="Firma"
+            itemValue4="Speck"
+            buttonText="Find out more"
+          />
+           <EventsCard
+            eventTitle1="UX/UI workshop"
+            itemTitle1="Lokacija"
+            itemValue1="Hodnik FOI-a"
+                        
+            itemTitle2="Datum i vrijeme"
+            itemValue2="14.10 (9:00-16:00h)"
+                        
+            itemTitle3="Slobodna mjesta"
+            itemValue3="15/60"
+                        
+            itemTitle4="Firma"
+            itemValue4="Speck"
+            buttonText="Find out more"
+          />
+           <EventsCard
+            eventTitle1="UX/UI workshop"
+            itemTitle1="Lokacija"
+            itemValue1="Hodnik FOI-a"
+                        
+            itemTitle2="Datum i vrijeme"
+            itemValue2="14.10 (9:00-16:00h)"
+                        
+            itemTitle3="Slobodna mjesta"
+            itemValue3="15/60"
+                        
+            itemTitle4="Firma"
+            itemValue4="Speck"
+            buttonText="Find out more"
+          />
+           <EventsCard
+            eventTitle1="UX/UI workshop"
+            itemTitle1="Lokacija"
+            itemValue1="Hodnik FOI-a"
+                        
+            itemTitle2="Datum i vrijeme"
+            itemValue2="14.10 (9:00-16:00h)"
+                        
+            itemTitle3="Slobodna mjesta"
+            itemValue3="15/60"
+                        
+            itemTitle4="Firma"
+            itemValue4="Speck"
+            buttonText="Find out more"
+          />
           <EventsCard
-                       eventTitle1="UX/UI workshop"
-                       itemTitle1="Lokacija"
-                       itemValue1="Hodnik FOI-a"
-                       
-                       itemTitle2="Lokacija"
-                       itemValue2="Hodnik FOI-a"
-                       
-                       itemTitle3="Lokacija"
-                       itemValue3="Hodnik FOI-a"
-                       
-                       itemTitle4="Lokacija"
-                       itemValue4="Hodnik FOI-a"
-                       buttonText="Find out more"
-                    />
+            eventTitle1="UX/UI workshop"
+            itemTitle1="Lokacija"
+            itemValue1="Hodnik FOI-a"
+                        
+            itemTitle2="Datum i vrijeme"
+            itemValue2="14.10 (9:00-16:00h)"
+                        
+            itemTitle3="Slobodna mjesta"
+            itemValue3="15/60"
+                        
+            itemTitle4="Firma"
+            itemValue4="Speck"
+            buttonText="Find out more"
+          />
+           <EventsCard
+            eventTitle1="UX/UI workshop"
+            itemTitle1="Lokacija"
+            itemValue1="Hodnik FOI-a"
+                        
+            itemTitle2="Datum i vrijeme"
+            itemValue2="14.10 (9:00-16:00h)"
+                        
+            itemTitle3="Slobodna mjesta"
+            itemValue3="15/60"
+                        
+            itemTitle4="Firma"
+            itemValue4="Speck"
+            buttonText="Find out more"
+          />
           <EventsCard
-                      eventTitle1="UX/UI workshop"
-                      itemTitle1="Lokacija"
-                      itemValue1="Hodnik FOI-a"
-                      
-                      itemTitle2="Lokacija"
-                      itemValue2="Hodnik FOI-a"
-                      
-                      itemTitle3="Lokacija"
-                      itemValue3="Hodnik FOI-a"
-                      
-                      itemTitle4="Lokacija"
-                      itemValue4="Hodnik FOI-a"
-                      buttonText="Find out more"
-                    />
+            eventTitle1="UX/UI workshop"
+            itemTitle1="Lokacija"
+            itemValue1="Hodnik FOI-a"
+                        
+            itemTitle2="Datum i vrijeme"
+            itemValue2="14.10 (9:00-16:00h)"
+                        
+            itemTitle3="Slobodna mjesta"
+            itemValue3="15/60"
+                        
+            itemTitle4="Firma"
+            itemValue4="Speck"
+            buttonText="Find out more"
+          />   
           <EventsCard
-                      eventTitle1="UX/UI workshop"
-                      itemTitle1="Lokacija"
-                      itemValue1="Hodnik FOI-a"
-                      
-                      itemTitle2="Lokacija"
-                      itemValue2="Hodnik FOI-a"
-                      
-                      itemTitle3="Lokacija"
-                      itemValue3="Hodnik FOI-a"
-                      
-                      itemTitle4="Lokacija"
-                      itemValue4="Hodnik FOI-a"
-                      buttonText="Find out more"
-                    />
-          <EventsCard
-                      eventTitle1="UX/UI workshop"
-                      itemTitle1="Lokacija"
-                      itemValue1="Hodnik FOI-a"
-                      
-                      itemTitle2="Lokacija"
-                      itemValue2="Hodnik FOI-a"
-                      
-                      itemTitle3="Lokacija"
-                      itemValue3="Hodnik FOI-a"
-                      
-                      itemTitle4="Lokacija"
-                      itemValue4="Hodnik FOI-a"
-                      buttonText="Find out more"
-                    />
-          <EventsCard
-                      eventTitle1="UX/UI workshop"
-                      itemTitle1="Lokacija"
-                      itemValue1="Hodnik FOI-a"
-                      
-                      itemTitle2="Lokacija"
-                      itemValue2="Hodnik FOI-a"
-                      
-                      itemTitle3="Lokacija"
-                      itemValue3="Hodnik FOI-a"
-                      
-                      itemTitle4="Lokacija"
-                      itemValue4="Hodnik FOI-a"
-                      buttonText="Find out more"
-                    />
-          <EventsCard
-                      eventTitle1="UX/UI workshop"
-                      itemTitle1="Lokacija"
-                      itemValue1="Hodnik FOI-a"
-                      
-                      itemTitle2="Lokacija"
-                      itemValue2="Hodnik FOI-a"
-                      
-                      itemTitle3="Lokacija"
-                      itemValue3="Hodnik FOI-a"
-                      
-                      itemTitle4="Lokacija"
-                      itemValue4="Hodnik FOI-a"
-                      buttonText="Find out more"
-                    />
-                  
+            eventTitle1="UX/UI workshop"
+            itemTitle1="Lokacija"
+            itemValue1="Hodnik FOI-a"
+                        
+            itemTitle2="Datum i vrijeme"
+            itemValue2="14.10 (9:00-16:00h)"
+                        
+            itemTitle3="Slobodna mjesta"
+            itemValue3="15/60"
+                        
+            itemTitle4="Firma"
+            itemValue4="Speck"
+            buttonText="Find out more"
+          />         
           </Grid>
         </Section>
     </>
