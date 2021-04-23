@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './Header.scss';
 import Logo from '../../assets/images/logo.png';
 
@@ -21,8 +21,8 @@ const Header = () => {
                     <div className="Header-NavHamburgerLine"></div>
                 </div>
 				<nav className="Header-Nav">
-					<Link to="/" className="Header-NavItem">{links.Home}</Link>
-					<Link to="/events" className="Header-NavItem">{links.Events}</Link>
+					<NavLink exact to="/" className="Header-NavItem" activeClassName="Header-NavItem_active">{links.Home}</NavLink>
+					<NavLink exact to="/events" className="Header-NavItem" activeClassName="Header-NavItem_active">{links.Events}</NavLink>
 				</nav>
 			</div>
 		</header>
