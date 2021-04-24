@@ -4,14 +4,10 @@ import './EventInfo.scss';
 
 const EventInfo = ({
     image,
-    itemTitle1,
-    itemValue1,
-    itemTitle2,
-    itemValue2,
-    itemTitle3,
-    itemValue3,
-    itemTitle4,
-    itemValue4,
+    location,
+	dateTime,
+	availability,
+	company,
     descripton,
     buttonText
 }) => {
@@ -24,22 +20,22 @@ const EventInfo = ({
 				<div className="EventInfo-Content">
 					<div className="EventInfo-ContentRow">
 						<div className="EventInfo-Item">
-							<h3 className="EventInfo-ItemTitle">{itemTitle1}</h3>
-						    <p className="EventInfo-ItemValue">{itemValue1}</p>
+							<h3 className="EventInfo-ItemTitle">Lokacija</h3>
+						    <p className="EventInfo-ItemValue">{location}</p>
                         </div>
 						<div className="EventInfo-Item">
-							<h3 className="EventInfo-ItemTitle">{itemTitle2}</h3>
-							<p className="EventInfo-ItemValue">{itemValue2}</p>
+							<h3 className="EventInfo-ItemTitle">Datum i vrijeme</h3>
+							<p className="EventInfo-ItemValue">{dateTime}</p>
 						</div>
 					</div>
 					<div className="EventInfo-ContentRow">
 						<div className="EventInfo-Item">
-							<h3 className="EventInfo-ItemTitle">{itemTitle3}</h3>
-							<p className="EventInfo-ItemValue">{itemValue3}</p>
+							<h3 className="EventInfo-ItemTitle">Slobodna mjesta</h3>
+							<p className="EventInfo-ItemValue">{availability}</p>
 						</div>
 						<div className="EventInfo-Item">
-							<h3 className="EventInfo-ItemTitle">{itemTitle4}</h3>
-							<p className="EventInfo-ItemValue">{itemValue4}</p>
+							<h3 className="EventInfo-ItemTitle">Firma</h3>
+							<p className="EventInfo-ItemValue">{company}</p>
 						</div>
 					</div>
 					<Button text={buttonText}/>

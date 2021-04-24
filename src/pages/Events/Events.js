@@ -6,126 +6,70 @@ import EventsCard from '../../components/EventsCard/EventsCard';
 const Events = () => {
   return (
     <>
-      <Section title="Events">
+      <Section title="Events" withoutTopPadding={true}>
         <Grid columns="4">
         <EventsCard
-          eventTitle1="UX/UI workshop"
-          itemTitle1="Lokacija"
-          itemValue1="Hodnik FOI-a"
-                        
-          itemTitle2="Datum i vrijeme"
-          itemValue2="14.10 (9:00-16:00h)"
-                        
-          itemTitle3="Slobodna mjesta"
-          itemValue3="15/60"
-                        
-          itemTitle4="Firma"
-          itemValue4="Speck"
+          title="UX/UI workshop"
+          location="Hodnik FOI-a"
+          dateTime="14.10 (9:00-16:00h)"
+          availability="15/60"
+          company="Speck"
           buttonText="Find out more"
         />
         <EventsCard
-          eventTitle1="UX/UI workshop"
-          itemTitle1="Lokacija"
-          itemValue1="Hodnik FOI-a"
-                        
-          itemTitle2="Datum i vrijeme"
-          itemValue2="14.10 (9:00-16:00h)"
-                        
-          itemTitle3="Slobodna mjesta"
-          itemValue3="15/60"
-                        
-          itemTitle4="Firma"
-          itemValue4="Speck"
+          title="UX/UI workshop"
+          location="Hodnik FOI-a"
+          dateTime="14.10 (9:00-16:00h)"
+          availability="15/60"
+          company="Speck"
           buttonText="Find out more"
         />
         <EventsCard
-          eventTitle1="UX/UI workshop"
-          itemTitle1="Lokacija"
-          itemValue1="Hodnik FOI-a"
-                        
-          itemTitle2="Datum i vrijeme"
-          itemValue2="14.10 (9:00-16:00h)"
-                        
-          itemTitle3="Slobodna mjesta"
-          itemValue3="15/60"
-                        
-          itemTitle4="Firma"
-          itemValue4="Speck"
+          title="UX/UI workshop"
+          location="Hodnik FOI-a"
+          dateTime="14.10 (9:00-16:00h)"
+          availability="15/60"
+          company="Speck"
           buttonText="Find out more"
         />
         <EventsCard
-          eventTitle1="UX/UI workshop"
-          itemTitle1="Lokacija"
-          itemValue1="Hodnik FOI-a"
-                        
-          itemTitle2="Datum i vrijeme"
-          itemValue2="14.10 (9:00-16:00h)"
-                        
-          itemTitle3="Slobodna mjesta"
-          itemValue3="15/60"
-                        
-          itemTitle4="Firma"
-          itemValue4="Speck"
+          title="UX/UI workshop"
+          location="Hodnik FOI-a"
+          dateTime="14.10 (9:00-16:00h)"
+          availability="15/60"
+          company="Speck"
           buttonText="Find out more"
         />
         <EventsCard
-          eventTitle1="UX/UI workshop"
-          itemTitle1="Lokacija"
-          itemValue1="Hodnik FOI-a"
-                        
-          itemTitle2="Datum i vrijeme"
-          itemValue2="14.10 (9:00-16:00h)"
-                        
-          itemTitle3="Slobodna mjesta"
-          itemValue3="15/60"
-                        
-          itemTitle4="Firma"
-          itemValue4="Speck"
+          title="UX/UI workshop"
+          location="Hodnik FOI-a"
+          dateTime="14.10 (9:00-16:00h)"
+          availability="15/60"
+          company="Speck"
           buttonText="Find out more"
         />
         <EventsCard
-          eventTitle1="UX/UI workshop"
-          itemTitle1="Lokacija"
-          itemValue1="Hodnik FOI-a"
-                        
-          itemTitle2="Datum i vrijeme"
-          itemValue2="14.10 (9:00-16:00h)"
-                        
-          itemTitle3="Slobodna mjesta"
-          itemValue3="15/60"
-                        
-          itemTitle4="Firma"
-          itemValue4="Speck"
+          title="UX/UI workshop"
+          location="Hodnik FOI-a"
+          dateTime="14.10 (9:00-16:00h)"
+          availability="15/60"
+          company="Speck"
           buttonText="Find out more"
         />
         <EventsCard
-          eventTitle1="UX/UI workshop"
-          itemTitle1="Lokacija"
-          itemValue1="Hodnik FOI-a"
-                        
-          itemTitle2="Datum i vrijeme"
-          itemValue2="14.10 (9:00-16:00h)"
-                        
-          itemTitle3="Slobodna mjesta"
-          itemValue3="15/60"
-                        
-          itemTitle4="Firma"
-          itemValue4="Speck"
+          title="UX/UI workshop"
+          location="Hodnik FOI-a"
+          dateTime="14.10 (9:00-16:00h)"
+          availability="15/60"
+          company="Speck"
           buttonText="Find out more"
         />   
         <EventsCard
-          eventTitle1="UX/UI workshop"
-          itemTitle1="Lokacija"
-          itemValue1="Hodnik FOI-a"
-                        
-          itemTitle2="Datum i vrijeme"
-          itemValue2="14.10 (9:00-16:00h)"
-                        
-          itemTitle3="Slobodna mjesta"
-          itemValue3="15/60"
-                        
-          itemTitle4="Firma"
-          itemValue4="Speck"
+          title="UX/UI workshop"
+          location="Hodnik FOI-a"
+          dateTime="14.10 (9:00-16:00h)"
+          availability="15/60"
+          company="Speck"
           buttonText="Find out more"
         />         
         </Grid>

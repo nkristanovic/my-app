@@ -3,43 +3,36 @@ import Button from '../Button/Button';
 import './EventsCard.scss';
 
 const EventsCard = ({ 
-    eventTitle1,
-    itemTitle1,
-    itemValue1,
-    
-    itemTitle2,
-    itemValue2,
-    
-    itemTitle3,
-    itemValue3,
-
-    itemTitle4,
-    itemValue4,
+    title,
+	location,
+	dateTime,
+	availability,
+	company,
     buttonText
 }) => {
     return (
 		<section className="SectionEvents">
 			<div className="EventCard">
-				<h2 className="EventCard-Title">{eventTitle1}</h2>
+				<h2 className="EventCard-Title">{title}</h2>
 				<div className="EventCard-Content">
 					<div className="EventCard-ContentRow">
 						<div className="EventCard-Item">
-							<h3 className="EventCard-ItemTitle">{itemTitle1}</h3>
-							<p className="EventCard-ItemValue">{itemValue1}</p>
+							<h3 className="EventCard-ItemTitle">Lokacija</h3>
+							<p className="EventCard-ItemValue">{location}</p>
 						</div>
 						<div className="EventCard-Item">
-							<h3 className="EventCard-ItemTitle">{itemTitle2}</h3>
-							<p className="EventCard-ItemValue">{itemValue2}</p>
+							<h3 className="EventCard-ItemTitle">Datum i vrijeme</h3>
+							<p className="EventCard-ItemValue">{dateTime}</p>
 						</div>
 					</div>
 					<div className="EventCard-ContentRow">
 						<div className="EventCard-Item">
-							<h3 className="EventCard-ItemTitle">{itemTitle3}</h3>
-							<p className="EventCard-ItemValue">{itemValue3}</p>
+							<h3 className="EventCard-ItemTitle">Slobodna mjesta</h3>
+							<p className="EventCard-ItemValue">{availability}</p>
 						</div>
 						<div className="EventCard-Item">
-							<h3 className="EventCard-ItemTitle">{itemTitle4}</h3>
-							<p className="EventCard-ItemValue">{itemValue4}</p>
+							<h3 className="EventCard-ItemTitle">Firma</h3>
+							<p className="EventCard-ItemValue">{company}</p>
 						</div>
 					</div>
                  </div>

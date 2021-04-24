@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 import Logo from '../../assets/images/logo.png';
 
@@ -12,9 +12,9 @@ const Header = () => {
     return (
         <header className="Header">
 			<div className="Header-Inner">
-				<Link to="/" className="Header-LogoContainer">
+				<NavLink to="/" className="Header-LogoContainer">
 					<img src={Logo} alt="Logo" className="Header-Logo"/>
-				</Link>
+				</NavLink>
                 <div className="Header-NavHamburger">
                     <div className="Header-NavHamburgerLine"></div>
                     <div className="Header-NavHamburgerLine"></div>
