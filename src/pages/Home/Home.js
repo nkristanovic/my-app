@@ -10,7 +10,7 @@ import ImageMarketing from '../../assets/images/marketing.jpg';
 
 
 
-function Home() {
+const Home = () => {
   return (
     <>
         <Hero/>

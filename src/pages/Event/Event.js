@@ -4,7 +4,7 @@ import EventInfo from '../../components/EventInfo/EventInfo';
 
 import ImageDesign from '../../assets/images/design.jpg';
 
-function Event() {
+const Event = () => {
   return (
     <>
       <Section title="UX/UI design workshop">

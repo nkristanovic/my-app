@@ -11,7 +11,7 @@ import Events from './pages/Events/Events';
 import Event from './pages/Event/Event';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
-function App() {
+const App = () => {
     return (
       <>
        <BrowserRouter>

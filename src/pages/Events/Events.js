@@ -3,7 +3,7 @@ import Section from '../../components/Section/Section';
 import Grid from '../../components/Grid/Grid';
 import EventsCard from '../../components/EventsCard/EventsCard';
 
-function Events() {
+const Events = () => {
   return (
     <>
       <Section title="Events">
