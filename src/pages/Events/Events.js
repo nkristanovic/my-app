@@ -1,13 +1,13 @@
 import React from 'react';
 import Section from '../../components/Section/Section';
-import Grid from '../../components/Grid/Grid';
+import { Grid } from '../../lib/style/generalStyles';
 import EventsCard from '../../components/EventsCard/EventsCard';
 
 const Events = () => {
   return (
     <>
       <Section title="Events" withoutTopPadding={true}>
-        <Grid columns="4">
+        <Grid columns={4}>
         <EventsCard
           title="UX/UI workshop"
           location="Hodnik FOI-a"

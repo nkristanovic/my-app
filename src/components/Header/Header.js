@@ -1,7 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './Header.scss';
-import Logo from '../../assets/images/logo.png';
+import LogoImage from '../../assets/images/logo.png';
+import {
+	HeaderWrapper,
+	Inner,
+	LogoContainer,
+	Logo,
+	Nav,
+	NavHamburger,
+	NavHamburgerLine,
+	NavItem,
+} from './HeaderStyle';
 
 const links = {
 	Home: 'Home',
@@ -10,22 +18,22 @@ const links = {
 
 const Header = () => {
     return (
-        <header className="Header">
-			<div className="Header-Inner">
-				<NavLink to="/" className="Header-LogoContainer">
-					<img src={Logo} alt="Logo" className="Header-Logo"/>
-				</NavLink>
-                <div className="Header-NavHamburger">
-                    <div className="Header-NavHamburgerLine"></div>
-                    <div className="Header-NavHamburgerLine"></div>
-                    <div className="Header-NavHamburgerLine"></div>
-                </div>
-				<nav className="Header-Nav">
-					<NavLink exact to="/" className="Header-NavItem" activeClassName="Header-NavItem_active">{links.Home}</NavLink>
-					<NavLink exact to="/events" className="Header-NavItem" activeClassName="Header-NavItem_active">{links.Events}</NavLink>
-				</nav>
-			</div>
-		</header>
+        <HeaderWrapper>
+			<Inner>
+				<LogoContainer to="/">
+					<Logo src={LogoImage} alt="Logo" />
+				</LogoContainer>
+                <NavHamburger>
+                    <NavHamburgerLine />
+                    <NavHamburgerLine />
+                    <NavHamburgerLine />
+                </NavHamburger>
+				<Nav>
+					<NavItem exact to="/">{links.Home}</NavItem>
+					<NavItem exact to="/events">{links.Events}</NavItem>
+				</Nav>
+			</Inner>
+		</HeaderWrapper>
     );
 }
 

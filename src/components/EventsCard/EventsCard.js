@@ -1,6 +1,14 @@
 import React from 'react';
 import Button from '../Button/Button';
-import './EventsCard.scss';
+import {
+	EventsCard as EventsCardWrapper,
+	Title,
+	Content,
+	ContentRow,
+	Item,
+	ItemTitle,
+	ItemValue
+} from './EventsCardStyle';
 
 const EventsCard = ({ 
     title,
@@ -11,34 +19,32 @@ const EventsCard = ({
     buttonText
 }) => {
     return (
-		<section className="SectionEvents">
-			<div className="EventCard">
-				<h2 className="EventCard-Title">{title}</h2>
-				<div className="EventCard-Content">
-					<div className="EventCard-ContentRow">
-						<div className="EventCard-Item">
-							<h3 className="EventCard-ItemTitle">Lokacija</h3>
-							<p className="EventCard-ItemValue">{location}</p>
-						</div>
-						<div className="EventCard-Item">
-							<h3 className="EventCard-ItemTitle">Datum i vrijeme</h3>
-							<p className="EventCard-ItemValue">{dateTime}</p>
-						</div>
-					</div>
-					<div className="EventCard-ContentRow">
-						<div className="EventCard-Item">
-							<h3 className="EventCard-ItemTitle">Slobodna mjesta</h3>
-							<p className="EventCard-ItemValue">{availability}</p>
-						</div>
-						<div className="EventCard-Item">
-							<h3 className="EventCard-ItemTitle">Firma</h3>
-							<p className="EventCard-ItemValue">{company}</p>
-						</div>
-					</div>
-                 </div>
+			<EventsCardWrapper>
+				<Title>{title}</Title>
+				<Content>
+					<ContentRow>
+						<Item>
+							<ItemTitle>Lokacija</ItemTitle>
+							<ItemValue>{location}</ItemValue>
+						</Item>
+						<Item>
+							<ItemTitle>Datum i vrijeme</ItemTitle>
+							<ItemValue>{dateTime}</ItemValue>
+						</Item>
+					</ContentRow>
+					<ContentRow>
+						<Item>
+							<ItemTitle>Slobodna mjesta</ItemTitle>
+							<ItemValue>{availability}</ItemValue>
+						</Item>
+						<Item>
+							<ItemTitle>Firma</ItemTitle>
+							<ItemValue>{company}</ItemValue>
+						</Item>
+					</ContentRow>
+                 </Content>
                  <Button text={buttonText}/>
-            </div>
-		</section>
+            </EventsCardWrapper>
     );
 }
 

@@ -1,6 +1,17 @@
 import React from 'react';
 import Button from '../Button/Button';
-import './EventInfo.scss';
+import {
+	SectionEvent,
+	EventInfo as EventInfoWrapper,
+	Figure,
+	Image,
+	Content,
+	ContentRow,
+	Item,
+	ItemTitle,
+	ItemValue,
+	Description
+} from './EventInfoStyle';
 
 const EventInfo = ({
     image,
@@ -12,39 +23,38 @@ const EventInfo = ({
     buttonText
 }) => {
     return (
-        <section className="SectionEvent">
-			<div className="EventInfo">
-				<figure className="EventInfo-Figure">
-                	<img src={image} alt="Design" className="EventInfo-Image"/> 
-				</figure>
-				<div className="EventInfo-Content">
-					<div className="EventInfo-ContentRow">
-						<div className="EventInfo-Item">
-							<h3 className="EventInfo-ItemTitle">Lokacija</h3>
-						    <p className="EventInfo-ItemValue">{location}</p>
-                        </div>
-						<div className="EventInfo-Item">
-							<h3 className="EventInfo-ItemTitle">Datum i vrijeme</h3>
-							<p className="EventInfo-ItemValue">{dateTime}</p>
-						</div>
-					</div>
-					<div className="EventInfo-ContentRow">
-						<div className="EventInfo-Item">
-							<h3 className="EventInfo-ItemTitle">Slobodna mjesta</h3>
-							<p className="EventInfo-ItemValue">{availability}</p>
-						</div>
-						<div className="EventInfo-Item">
-							<h3 className="EventInfo-ItemTitle">Firma</h3>
-							<p className="EventInfo-ItemValue">{company}</p>
-						</div>
-					</div>
+        <SectionEvent>
+			<EventInfoWrapper>
+				<Figure>
+                	<Image src={image} alt="Design" /> 
+				</Figure>
+				<Content>
+					<ContentRow>
+						<Item>
+							<ItemTitle>Lokacija</ItemTitle>
+						    <ItemValue>{location}</ItemValue>
+                        </Item>
+						<Item>
+							<ItemTitle>Datum i vrijeme</ItemTitle>
+							<ItemValue>{dateTime}</ItemValue>
+						</Item>
+					</ContentRow>
+					<ContentRow>
+						<Item>
+							<ItemTitle>Slobodna mjesta</ItemTitle>
+							<ItemValue>{availability}</ItemValue>
+						</Item>
+						<Item>
+							<ItemTitle>Firma</ItemTitle>
+							<ItemValue>{company}</ItemValue>
+						</Item>
+					</ContentRow>
 					<Button text={buttonText}/>
-				</div>
-			</div>
-			<p className="EventInfo-Description">{descripton}</p>
-		</section>
+				</Content>
+			</EventInfoWrapper>
+			<Description>{descripton}</Description>
+		</SectionEvent>
     );
 }
    
-
 export default EventInfo;
