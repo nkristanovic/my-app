@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import {
     breakpoints,
+    transitionEase,
+    colors
 } from './theme';
+import { Link } from 'react-router-dom';
 
 export const Grid = styled.div`
     display: grid;
@@ -30,3 +33,28 @@ export const Grid = styled.div`
         }
     }
 `
+
+export const Button = styled(Link) `
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #d33e3e;
+    border-radius: 6px;
+    background: ${colors.red};
+    color: ${colors.white};
+    transition: ${transitionEase};
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+
+    &:hover {
+        cursor: pointer;
+        border-color: ${colors.yellow};
+        background: ${colors.yellow};
+    }
+
+    &:focus {
+        outline: none;
+    }
+`;
