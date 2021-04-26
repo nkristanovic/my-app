@@ -21,7 +21,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/events" component={Events} />
-            <Route path="/event" component={Event} />
+            <Route path="/event/:id" component={Event} />
           </Switch>
           </Main>
           <Footer />

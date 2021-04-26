@@ -19,14 +19,15 @@ const EventInfo = ({
 	dateTime,
 	availability,
 	company,
-    descripton,
-    buttonText
+    description,
+    buttonText,
+	imageAlt
 }) => {
     return (
         <SectionEvent>
 			<EventInfoWrapper>
 				<Figure>
-                	<Image src={image} alt="Design" /> 
+                	<Image src={image} alt={imageAlt} /> 
 				</Figure>
 				<Content>
 					<ContentRow>
@@ -49,10 +50,10 @@ const EventInfo = ({
 							<ItemValue>{company}</ItemValue>
 						</Item>
 					</ContentRow>
-					<Button>{buttonText}</Button> 
+					<Button to="#">{buttonText}</Button> 
 				</Content>
 			</EventInfoWrapper>
-			<Description>{descripton}</Description>
+			<Description>{description}</Description>
 		</SectionEvent>
     );
 }

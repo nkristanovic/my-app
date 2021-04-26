@@ -12,16 +12,18 @@ const Event = ({
     image,
     title,
     description,
-    buttonText
+    buttonText,
+    imageAlt,
+    route
 }) => {
     return (
         <EventWrapper>
             <Figure>
-                <Image src={image} alt="Design" />
+                <Image src={image} alt={imageAlt} />
             </Figure>
             <Title>{title}</Title>
             <Description>{description}</Description>
-           <Button to="/event">{buttonText} </Button>
+           <Button to={route}> {buttonText} </Button>
         </EventWrapper>
     );
 }
