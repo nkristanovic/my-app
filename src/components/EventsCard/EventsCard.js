@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { Button } from '../../lib/style/generalStyles';
 import {
 	EventsCard as EventsCardWrapper,
 	Title,
@@ -43,7 +43,7 @@ const EventsCard = ({
 						</Item>
 					</ContentRow>
                  </Content>
-                 <Button text={buttonText}/>
+                 <Button to="/event"> {buttonText} </Button>
             </EventsCardWrapper>
     );
 }

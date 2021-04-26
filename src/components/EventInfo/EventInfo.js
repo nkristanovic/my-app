@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { Button } from '../../lib/style/generalStyles';
 import {
 	SectionEvent,
 	EventInfo as EventInfoWrapper,
@@ -49,7 +49,7 @@ const EventInfo = ({
 							<ItemValue>{company}</ItemValue>
 						</Item>
 					</ContentRow>
-					<Button text={buttonText}/>
+					<Button>{buttonText}</Button> 
 				</Content>
 			</EventInfoWrapper>
 			<Description>{descripton}</Description>

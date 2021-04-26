@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { Button } from '../../lib/style/generalStyles';
 import {
     Event as EventWrapper,
     Figure,
@@ -21,7 +21,7 @@ const Event = ({
             </Figure>
             <Title>{title}</Title>
             <Description>{description}</Description>
-           <Button text={buttonText} />
+           <Button to="/event">{buttonText} </Button>
         </EventWrapper>
     );
 }
