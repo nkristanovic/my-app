@@ -18,7 +18,7 @@ export const EventsCard = styled.div `
 `;
 
 export const Title = styled.h2 `
-    font-size: 18px;
+    font-size: 16px;
     border-bottom: 1px solid #d0d0d0;
     text-align: center;
     margin-bottom: 15px;
