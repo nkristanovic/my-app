@@ -16,7 +16,8 @@ const EventsCard = ({
 	dateTime,
 	availability,
 	company,
-    buttonText
+    buttonText,
+	route
 }) => {
     return (
 			<EventsCardWrapper>
@@ -43,7 +44,7 @@ const EventsCard = ({
 						</Item>
 					</ContentRow>
                  </Content>
-                 <Button to="/event"> {buttonText} </Button>
+                 <Button to={route}> {buttonText} </Button>
             </EventsCardWrapper>
     );
 }
