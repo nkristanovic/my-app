@@ -26,16 +26,16 @@ const Events = (props) => {
         <Section title="Events" withoutTopPadding={true}>
           <Grid columns={4}>
           {events.map(event => (
-          <EventsCard
-            key={event.id}
-            route={`/event/${event.id}`}
-            title={event.title}
-            location={event.location}
-            dateTime={event.dateTime}
-            availability={event.availability}
-            company={event.company}
-            buttonText="Find out more"
-          />
+            <EventsCard
+              key={event.id}
+              route={`/event/${event.id}`}
+              title={event.title}
+              location={event.location}
+              dateTime={event.dateTime}
+              availability={event.availability}
+              company={event.company}
+              buttonText="Find out more"
+            />
           ))}
           </Grid>
         </Section>
