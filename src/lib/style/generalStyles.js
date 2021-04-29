@@ -58,3 +58,11 @@ export const Button = styled(Link) `
         outline: none;
     }
 `;
+
+export const Main = (props) => {
+    return (
+        <main>
+            {props.children}
+        </main>
+    );
+}
