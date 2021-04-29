@@ -13,7 +13,6 @@ const LoaderBars = () => {
             color= "#333333"
             height={80} 
             width={80} 
-            timeout={1000}
             />
         </LoaderWrapper>
     )

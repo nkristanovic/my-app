@@ -8,7 +8,6 @@ import {
 	Nav,
 	NavItem,
 } from './HeaderStyle';
-
 import  Hamburger from '../Hamburger/Hamburger';
 
 const links = {
@@ -26,8 +25,8 @@ const Header = () => {
 				</LogoContainer>
                 <Hamburger />
 				<Nav>
-					<NavItem exact to="/">{links.Home}</NavItem>
-					<NavItem exact to="/events">{links.Events}</NavItem>
+					<NavItem activeClassName="active" exact to="/">{links.Home}</NavItem>
+					<NavItem activeClassName="active" exact to="/events">{links.Events}</NavItem>
 				</Nav>
 			</Inner>
 		</HeaderWrapper>

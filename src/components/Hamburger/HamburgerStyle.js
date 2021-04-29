@@ -8,9 +8,15 @@ import { NavLink } from 'react-router-dom';
 export const NavHamburger = styled.div `
     width: 25px;
     position: fixed;
-    right:5px;
+    right:10px;
     @media screen and (${breakpoints.desktop}) {
         display: none;
+    }
+    @media screen and (${breakpoints.tablet}) {
+       right: 30px;
+    }
+    @media screen and (${breakpoints.mobileLarge}) {
+       right: 20px;
     }
 
 `;
@@ -50,11 +56,12 @@ export const Ul = styled.ul`
 `;
 
 export const NavHamb = styled(NavLink)`
-    padding: 10px 10px;
+    padding: 15px 10px;
     text-decoration:none;
     color: ${colors.black};
+    
     @media (${breakpoints.mobileLarge}) {
-        font-size:15px;
+        font-size: 18px;
     }
 `;
 
