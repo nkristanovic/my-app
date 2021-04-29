@@ -10,19 +10,21 @@ import LoaderBars from '../../components/Loader/Loader';
 const Home = () => {
 
   const [events, setEvents] = useState(null);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-        setTimeout(() => {
+        if (loading === true)
+          setTimeout(() => {
+          setLoading(false);
           setEvents(eventsMock)
-        },1000);
-  }, []);
+        }, 1000);
+  }, [loading]);
 
   
   return (
     <>
       <Hero/>
       <Section title="Featured events">
-      <LoaderBars />
+      {loading ? <LoaderBars /> : ''}
         {events && 
           <Grid columns={3}>
             {events.map(event => event.isFeatured && (
