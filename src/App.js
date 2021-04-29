@@ -3,9 +3,8 @@ import  { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
 
 import Header from './components/Header/Header'; 
-import Main from './components/Main/Main';
+import { Main } from './lib/style/generalStyles';
 import Footer from './components/Footer/Footer';
-
 import Home from './pages/Home/Home';
 import Events from './pages/Events/Events';
 import Event from './pages/Event/Event';

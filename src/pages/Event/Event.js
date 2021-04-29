@@ -15,7 +15,7 @@ const Event = (props) => {
 
   useEffect(() => {
     events && setEvent(...events.filter(event => event.id === routeEventId));
-  }, [events]);
+  }, [events, routeEventId]);
 
   return (
     <>

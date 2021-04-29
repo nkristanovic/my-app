@@ -6,10 +6,10 @@ import {
 	LogoContainer,
 	Logo,
 	Nav,
-	NavHamburger,
-	NavHamburgerLine,
 	NavItem,
 } from './HeaderStyle';
+
+import  Hamburger from '../Hamburger/Hamburger';
 
 const links = {
 	Home: 'Home',
@@ -17,17 +17,14 @@ const links = {
 }
 
 const Header = () => {
+
     return (
         <HeaderWrapper>
 			<Inner>
 				<LogoContainer to="/">
 					<Logo src={LogoImage} alt="Logo" />
 				</LogoContainer>
-                <NavHamburger>
-                    <NavHamburgerLine />
-                    <NavHamburgerLine />
-                    <NavHamburgerLine />
-                </NavHamburger>
+                <Hamburger />
 				<Nav>
 					<NavItem exact to="/">{links.Home}</NavItem>
 					<NavItem exact to="/events">{links.Events}</NavItem>

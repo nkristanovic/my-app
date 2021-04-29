@@ -23,6 +23,10 @@ export const Inner = styled.div `
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (${breakpoints.mobileLarge}) {
+        padding: 10px 20px;
+    }
+
     @media screen and (${breakpoints.tablet}) {
         padding: 15px 25px;
     }
@@ -58,26 +62,6 @@ export const Nav = styled.nav `
 
     @media screen and (${breakpoints.desktop}) {  
     display: block;
-    }
-`;
-
-export const NavHamburger = styled.div `
-    width: 25px;
-
-    @media screen and (${breakpoints.desktop}) {
-    display: none;
-    }
-`;
-
-export const NavHamburgerLine = styled.div `
-    width: 100%;
-    height: 2px;
-    border-radius: 100px;
-    background-color: ${colors.darkGrey};
-    margin-bottom: 6px;
-
-    &:last-child {
-        margin-bottom: 0;
     }
 `;
 

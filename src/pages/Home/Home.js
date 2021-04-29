@@ -4,6 +4,7 @@ import Hero from '../../components/Hero/Hero';
 import Section from '../../components/Section/Section';
 import { Grid } from '../../lib/style/generalStyles';
 import Event from '../../components/Event/Event';
+import LoaderBars from '../../components/Loader/Loader';
 
 
 const Home = () => {
@@ -11,15 +12,17 @@ const Home = () => {
   const [events, setEvents] = useState(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      setEvents(eventsMock);
-    },1000); 
-  }, {});
+        setTimeout(() => {
+          setEvents(eventsMock)
+        },1000);
+  }, []);
 
+  
   return (
     <>
       <Hero/>
       <Section title="Featured events">
+      <LoaderBars />
         {events && 
           <Grid columns={3}>
             {events.map(event => event.isFeatured && (
