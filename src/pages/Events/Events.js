@@ -15,12 +15,12 @@ const Events = (props) => {
 
   useEffect(() => {
     if (loading === true) {
-    setTimeout(() => {
-      setLoading(false);
-      setEvents(eventsMock);
-    }, 1000);
-  } 
-}, [loading]);
+      setTimeout(() => {
+        setLoading(false);
+        setEvents(eventsMock);
+      }, 1000);
+    } 
+  }, [loading]);
 
   useEffect(() => {
     event && setEvent(...events.filter(event => event.id === routeEventId));
@@ -28,12 +28,12 @@ const Events = (props) => {
 
   const [value, setValue] = useState('');
     
-        const handleSearch = (e) => {
-            setValue(e.target.value)
-        }
-        const filteredEvent = eventsMock.filter(events => {
-          return events.title.toLowerCase().includes(value.toLowerCase());
-        })
+  const handleSearch = (e) => {
+    setValue(e.target.value)
+  }
+  const filteredEvent = eventsMock.filter(events => {
+    return events.title.toLowerCase().includes(value.toLowerCase());
+  })
 
   return (
     <>
