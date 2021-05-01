@@ -26,14 +26,23 @@ const Events = (props) => {
     event && setEvent(...events.filter(event => event.id === routeEventId));
   }, [events, event, routeEventId]);
 
+  const [value, setValue] = useState('');
+    
+        const handleSearch = (e) => {
+            setValue(e.target.value)
+        }
+        const filteredEvent = eventsMock.filter(events => {
+          return events.title.toLowerCase().includes(value.toLowerCase());
+        })
+
   return (
     <>
       <Section title="Events" withoutTopPadding={true}>
-      <SearchBar />
+      <SearchBar disabled={loading} value={value} onChange={handleSearch}/>
       {loading ? <LoaderBars /> : ''}
         {events && 
             <Grid columns={4}>
-            {events.map(event => (
+            {filteredEvent.map(event => (
               <EventsCard
                 key={event.id}
                 route={`/event/${event.id}`}
