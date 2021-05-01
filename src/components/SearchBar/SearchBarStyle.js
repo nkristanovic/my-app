@@ -16,10 +16,6 @@ export const SearchBarWrapper = styled.div `
     }
 `;
 
-export const Form = styled.form `
-   
-`;
-
 export const Input = styled.input `
     border: 1px solid ${colors.darkGrey};
     border-radius: 6px;
@@ -27,6 +23,7 @@ export const Input = styled.input `
     outline: none;
     font-size: 14px;
     width: 100%;
+    padding: 0 8px;
     &:hover {
         border-color: ${colors.yellow};
     }

@@ -1,19 +1,19 @@
 import React from 'react';
 import {
     SearchBarWrapper,
-    Form,
     Input
 } from './SearchBarStyle';
 
+const SearchBar = (props) => {     
 
-const SearchBar = () => {
     return (
         <SearchBarWrapper>
-            <Form>
-                <Input 
+                <Input
                     placeholder='Search event by title...' 
+                    disabled={props.disabled}
+                    onChange={props.onChange}
+                    value={props.value}
                 />
-            </Form>
         </SearchBarWrapper>
     )
 }
