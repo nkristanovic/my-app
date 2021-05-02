@@ -13,6 +13,8 @@ import  Hamburger from '../Hamburger/Hamburger';
 const links = {
 	Home: 'Home',
 	Events: 'Events',
+	Register: 'Register',
+	Login: 'Login'
 }
 
 const Header = () => {
@@ -27,6 +29,8 @@ const Header = () => {
 				<Nav>
 					<NavItem activeClassName="active" exact to="/">{links.Home}</NavItem>
 					<NavItem activeClassName="active" exact to="/events">{links.Events}</NavItem>
+					<NavItem exact to="/register">{links.Register}</NavItem>
+					<NavItem exact to="/login">{links.Login}</NavItem>
 				</Nav>
 			</Inner>
 		</HeaderWrapper>
