@@ -66,3 +66,111 @@ export const Main = (props) => {
         </main>
     );
 }
+
+export const Form = styled.div `
+    width: 100%;
+    margin: 0 auto;
+    @media screen and (${breakpoints.mobileLarge}) {
+        width: 400px;
+    }
+`;
+
+export const FormRow = styled.div `
+    margin-bottom: 32px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+`;
+
+export const CheckboxWrapper = styled.div `
+    display: flex;
+    align-items: center;
+`;
+
+export const InputLabel = styled.label `
+    font-size: 14px;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+
+    @media screen and (${breakpoints.desktop}) {
+        font-size: 16px;
+    }
+`;
+
+export const InputText = styled.input `
+    border: 1px solid ${colors.lightGrey};
+    border-radius: 6px;
+    width: 100%;
+    line-height: 40px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Monteserrat', sans-ServiceUIFrameContext;
+
+    &-focus {
+        border-color: ${colors.yellow};
+    }
+
+    @media screen and (${breakpoints.desktop}) {
+        font-size: 16px;
+    }
+`;
+
+export const TextArea = styled.textarea `
+    border: 1px solid ${colors.lightGrey};
+    border-radius: 6px;
+    width: 100%;
+    line-height: 150%;
+    padding: 10px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Monteserrat', sans-serif;
+    min-width: 100%;
+
+    &:focus {
+        border-color: ${colors.yellow};
+    }
+
+    @media screen and (${breakpoints.desktop}) {
+        font-size: 16px;
+    }
+`;
+
+export const InputCheckbox = styled.input `
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+`;
+
+export const InputError = styled.p `
+    font-size: 14px;
+    color: ${colors.red};
+    padding-top: 8px;
+`;
+
+export const ButtonSubmit = styled.button `
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #d33e3e;
+    border-radius: 6px;
+    background: ${colors.red};
+    color: ${colors.white};
+    transition: ${transitionEase};
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+
+    &:hover {
+        cursor: pointer;
+        border-color: ${colors.yellow};
+        background: ${colors.yellow};
+    }
+
+    &:focus {
+        outline: none;
+    }
+`;
