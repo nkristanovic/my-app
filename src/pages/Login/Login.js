@@ -12,7 +12,6 @@ import {
     ButtonSubmit
 } from '../../lib/style/generalStyles'
 
-
 const Login = () => {
     const [isLoading, setIsLoading] = useState(false);
     const formik = useFormik({
@@ -50,7 +49,7 @@ const Login = () => {
 
     return (
         <>
-            <Section title="Register" withoutTopPadding={true}>
+            <Section title="Login" withoutTopPadding={true}>
                 {!isLoading
                     ? <Form onSubmit={formik.handleSubmit}>
                         <FormRow>
@@ -69,7 +68,7 @@ const Login = () => {
                             <InputLabel htmlFor='password'>Password</InputLabel>
                             <InputText
                                 id='password'
-                                type='text'
+                                type='password'
                                 {...formik.getFieldProps('password')}
                             />
                             {formik.touched.password && formik.errors.password
@@ -77,7 +76,7 @@ const Login = () => {
                                 :null
                             }
                         </FormRow>
-                        <ButtonSubmit type='submit'>Submit</ButtonSubmit>
+                        <ButtonSubmit type='submit'>Login</ButtonSubmit>
                     </Form>
                 : <LoaderBars />}
             </Section>

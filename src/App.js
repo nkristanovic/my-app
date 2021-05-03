@@ -1,7 +1,6 @@
 import React from 'react';
 import  { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
-
 import Header from './components/Header/Header'; 
 import { Main } from './lib/style/generalStyles';
 import Footer from './components/Footer/Footer';

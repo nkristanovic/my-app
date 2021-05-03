@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
     breakpoints,
     transitionEase,
@@ -33,8 +33,7 @@ export const Grid = styled.div`
         }
     }
 `
-
-export const Button = styled(Link) `
+export const ButtonDefault = css `
     display: block;
     text-decoration: none;
     width: 100%;
@@ -57,6 +56,10 @@ export const Button = styled(Link) `
     &:focus {
         outline: none;
     }
+`;
+
+export const Button = styled(Link) `
+    ${ButtonDefault}
 `;
 
 export const Main = (props) => {
@@ -107,9 +110,9 @@ export const InputText = styled.input `
     padding: 0 10px;
     outline: none;
     font-size: 14px;
-    font-family: 'Monteserrat', sans-ServiceUIFrameContext;
+    font-family: 'Monteserrat', sans-serif;
 
-    &-focus {
+    &:focus {
         border-color: ${colors.yellow};
     }
 
@@ -151,26 +154,5 @@ export const InputError = styled.p `
 `;
 
 export const ButtonSubmit = styled.button `
-    display: block;
-    text-decoration: none;
-    width: 100%;
-    line-height: 40px;
-    text-align: center;
-    border: 1px solid #d33e3e;
-    border-radius: 6px;
-    background: ${colors.red};
-    color: ${colors.white};
-    transition: ${transitionEase};
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-
-    &:hover {
-        cursor: pointer;
-        border-color: ${colors.yellow};
-        background: ${colors.yellow};
-    }
-
-    &:focus {
-        outline: none;
-    }
+    ${ButtonDefault}
 `;

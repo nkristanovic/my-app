@@ -3,7 +3,6 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Section from '../../components/Section/Section';
 import LoaderBars from '../../components/Loader/Loader';
-
 import {
     Form,
     FormRow,
@@ -13,7 +12,7 @@ import {
     InputCheckbox,
     InputError,
     ButtonSubmit
-} from '../../lib/style/generalStyles'
+} from '../../lib/style/generalStyles';
 
 const Register = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -26,34 +25,35 @@ const Register = () => {
             password: '',
             passwordConfirmation: '',
             isAdmin: false
-    },
-    validationSchema: Yup.object ({
-        firstName: Yup.string()
-            .required('First name is reuqired'),
-        lastName: Yup.string()
-            .required('Last name is required'),
-        email: Yup.string()
-            .email('Invalid email address')
-            .required('Email is required'),
-        password: Yup.string()
-            .min(8, 'Password must be at least 8 characters long')
-            .required('Password is required'),
-        passwordConfirmation: Yup.string()
-            .test(
-                'password-match',
-                'Passwords must match',
-                function(value) {
-                    return this.parent.password === value
-                }
-            )
-    }),
-    onSubmit: values => {
-        setIsLoading(true);
-        setTimeout(() => {
-            setIsLoading(false);
-            alert(JSON.stringify(values));
-        }, 1000);
-    },
+        },
+        validationSchema: Yup.object ({
+            firstName: Yup.string()
+                .required('First name is reuqired'),
+            lastName: Yup.string()
+                .required('Last name is required'),
+            email: Yup.string()
+                .email('Invalid email address')
+                .required('Email is required'),
+            password: Yup.string()
+                .min(8, 'Password must be at least 8 characters long')
+                .required('Password is required'),
+            passwordConfirmation: Yup.string()
+                .test(
+                    'password-match',
+                    'Passwords must match',
+                    function(value) {
+                        return this.parent.password === value
+                    }
+                )
+        }),
+        onSubmit: values => {
+            setIsLoading(true);
+            
+            setTimeout(() => {
+                setIsLoading(false);
+                alert(JSON.stringify(values));
+            }, 1000);
+        },
     });
 
     return (
@@ -113,7 +113,7 @@ const Register = () => {
                             <InputLabel htmlFor='passwordConfirmation'>Confirm password</InputLabel>
                             <InputText
                                 id='passwordConfirmation'
-                                type='pasword'
+                                type='password'
                                 {...formik.getFieldProps('passwordConfirmation')}
                             />
                             {formik.touched.passwordConfirmation && formik.errors.passwordConfirmation
@@ -131,7 +131,7 @@ const Register = () => {
                                 <InputLabel htmlFor='isAdmin'>Register as Admin</InputLabel>
                             </CheckboxWrapper>
                         </FormRow>
-                        <ButtonSubmit type='submit'>Submit</ButtonSubmit>
+                        <ButtonSubmit type='submit'>Register</ButtonSubmit>
                     </Form>
                 : <LoaderBars />}
             </Section>
