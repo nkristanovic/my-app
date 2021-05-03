@@ -20,6 +20,8 @@ const Hamburger = () => {
       <Ul open={open}>
         <NavHamb to="/" onClick={() => setOpen(!open)} >Home</NavHamb>
         <NavHamb to="/events" onClick={() => setOpen(!open)}>Events</NavHamb>
+        <NavHamb to="/register" onClick={() => setOpen(!open)}>Register</NavHamb>
+        <NavHamb to="/login" onClick={() => setOpen(!open)}>Login</NavHamb>
       </Ul>
     </>
   )
