@@ -22,6 +22,7 @@ const Hamburger = () => {
         <NavHamb to="/events" onClick={() => setOpen(!open)}>Events</NavHamb>
         <NavHamb to="/register" onClick={() => setOpen(!open)}>Register</NavHamb>
         <NavHamb to="/login" onClick={() => setOpen(!open)}>Login</NavHamb>
+        <NavHamb to="/admin" onClick={() => setOpen(!open)}>Admin</NavHamb>
       </Ul>
     </>
   )

@@ -70,7 +70,7 @@ export const Main = (props) => {
     );
 }
 
-export const Form = styled.div `
+export const Form = styled.form `
     width: 100%;
     margin: 0 auto;
     @media screen and (${breakpoints.mobileLarge}) {
@@ -155,4 +155,8 @@ export const InputError = styled.p `
 
 export const ButtonSubmit = styled.button `
     ${ButtonDefault}
+`;
+
+export const Title = styled.h1 `
+    
 `;

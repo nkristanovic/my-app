@@ -9,6 +9,7 @@ import Events from './pages/Events/Events';
 import Event from './pages/Event/Event';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
+import Admin from './pages/Admin/Admin';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/event/:id" component={Event} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
+            <Route path="/admin" component={Admin} />
           </Switch>
           </Main>
           <Footer />

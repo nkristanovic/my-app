@@ -14,7 +14,8 @@ const links = {
 	Home: 'Home',
 	Events: 'Events',
 	Register: 'Register',
-	Login: 'Login'
+	Login: 'Login',
+	Admin: 'Admin'
 }
 
 const Header = () => {
@@ -31,6 +32,7 @@ const Header = () => {
 					<NavItem activeClassName="active" exact to="/events">{links.Events}</NavItem>
 					<NavItem activeClassName="active" exact to="/register">{links.Register}</NavItem>
 					<NavItem activeClassName="active" exact to="/login">{links.Login}</NavItem>
+					<NavItem activeClassName="active" exact to="/admin">{links.Admin}</NavItem>
 				</Nav>
 			</Inner>
 		</HeaderWrapper>

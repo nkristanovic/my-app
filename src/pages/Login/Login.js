@@ -18,7 +18,6 @@ const Login = () => {
         initialValues: {
             email: '',
             password: '',
-            passwordConfirmation: '',
             isAdmin: false
         },
         validationSchema: Yup.object ({
@@ -28,14 +27,6 @@ const Login = () => {
             password: Yup.string()
                 .min(8, 'Password must be at least 8 characters long')
                 .required('Password is required'),
-            passwordConfirmation: Yup.string()
-                .test(
-                    'password-match',
-                    'Passwords must match',
-                    function(value) {
-                        return this.parent.password === value
-                    }
-                )
         }),
         onSubmit: values => {
             setIsLoading(true);
