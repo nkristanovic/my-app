@@ -96,7 +96,7 @@ export const InputLabel = styled.label `
     display: block;
     font-weight: 600;
     margin-bottom: 4px;
-
+    
     @media screen and (${breakpoints.desktop}) {
         font-size: 16px;
     }
@@ -157,6 +157,45 @@ export const ButtonSubmit = styled.button `
     ${ButtonDefault}
 `;
 
-export const Title = styled.h1 `
+export const FormColumn = styled.div `
+    display: flex;
+    gap: 10px;
+`;
+
+export const Select = styled.select `
+    border: 1px solid ${colors.lightGrey};
+    border-radius: 6px;
+    line-height: 40px;
+    padding: 10px 85px 10px 5px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Monteserrat', sans-serif;
+
+    &:focus {
+        border-color: ${colors.yellow};
+    }
+
+    @media screen and (${breakpoints.desktop}) {
+        font-size: 16px;
+    }
+
+    option {
+        background: ${colors.darkGrey};
+        color: ${colors.white};
+        font-size: 15px;
+    }
+`;
+
+export const ButtonAddEvent = styled.button `
+    ${ButtonDefault};
     
+    width: 10%;
+    font-size: 14px;
+    background: ${colors.white};
+    color: ${colors.black};
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid ${colors.darkGrey};
+    border-radius: 6px;
+    margin-left: 2%;
 `;

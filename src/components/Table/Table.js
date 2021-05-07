@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import Modal from '../Modal/Modal';
 import {
     Form,
     FormRow,
+    FormColumn,
     InputLabel,
     InputText,
+    TextArea,
     InputError,
+    ButtonSubmit,
+    Select,
+    ButtonAddEvent
 } from '../../lib/style/generalStyles';
-
+import {
+    Tr,
+    Th,
+    TableBody,
+    TableWrapper,
+    TableEmpty
+} from './TableStyle';
 const Table = () => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [events, setEvents] = useState([]);
+    
     const formik = useFormik({
         initialValues: {
+            id: 1,
             title: '',
             description: '',
             category: '',
@@ -38,10 +54,18 @@ const Table = () => {
                 .required('Capacity is requried'),
             firm: Yup.string()
                 .required('Firm is requried'),    
-        })
-    })
+        }),
+        onSubmit: values => {
+            setEvents ({
+                ...events,
+                values
+            });
+        },
+    });
+    
     return (
         <>
+            <Modal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
                 <Form onSubmit={formik.handleSubmit}>
                     <FormRow>
                         <InputLabel htmlFor='title'>Title</InputLabel>
@@ -57,9 +81,8 @@ const Table = () => {
                     </FormRow>
                     <FormRow>
                         <InputLabel htmlFor='decription'>Description</InputLabel>
-                        <InputText
+                        <TextArea
                             id='description'
-                            type='textarea'
                             {...formik.getFieldProps('description')}
                         />
                         {formik.touched.description && formik.errors.description
@@ -67,68 +90,114 @@ const Table = () => {
                             : null
                         }
                     </FormRow>
+                    <FormColumn>
+                        <FormRow>
+                            <InputLabel htmlFor='category'>Category</InputLabel>
+                            <Select
+                                id='category'
+                                {...formik.getFieldProps('category')}
+                            >
+                            <option value="">Select...</option>
+                            <option value="1">#marketing</option>
+                            <option value="2">#design</option>
+                            <option value="3">#frontend</option>
+                            <option value="4">#backend</option>
+                            </Select>
+                            {formik.touched.category && formik.errors.category
+                                ? <InputError>{formik.errors.category}</InputError>
+                                : null
+                            }
+                        </FormRow>
+                        <FormRow>
+                            <InputLabel htmlFor='date'>Date</InputLabel>
+                            <InputText
+                                id='date'
+                                {...formik.getFieldProps('date')}
+                            />
+                            {formik.touched.date && formik.errors.date
+                                ? <InputError>{formik.errors.date}</InputError>
+                                : null
+                            }
+                        </FormRow>
+                    </FormColumn>
+                    <FormColumn>
+                        <FormRow>
+                            <InputLabel htmlFor='timeFrom'>Time from</InputLabel>
+                            <InputText
+                                id='timeFrom'
+                                {...formik.getFieldProps('timeFrom')}
+                            />
+                            {formik.touched.timeFrom && formik.errors.timeFrom
+                                ? <InputError>{formik.errors.timeFrom}</InputError>
+                                : null
+                            }
+                        </FormRow>
+                        <FormRow>
+                            <InputLabel htmlFor='timeTo'>Time to</InputLabel>
+                            <InputText
+                                id='timeTo'
+                                {...formik.getFieldProps('timeTo')}
+                            />
+                            {formik.touched.timeTo && formik.errors.timeTo
+                                ? <InputError>{formik.errors.timeTo}</InputError>
+                                : null
+                            }
+                        </FormRow>
+                    </FormColumn>
+                    <FormColumn>
+                        <FormRow>
+                            <InputLabel htmlFor='capacity'>Capacity</InputLabel>
+                            <InputText
+                                id='capacity'
+                                {...formik.getFieldProps('capacity')}
+                            />
+                            {formik.touched.capacity && formik.errors.capacity
+                                ? <InputError>{formik.errors.capacity}</InputError>
+                                : null
+                            }
+                        </FormRow>
+                        <FormRow>
+                            <InputLabel htmlFor='firm'>Company</InputLabel>
+                            <Select
+                                id='firm'
+                                {...formik.getFieldProps('firm')}
+                            >
+                            <option value="">Select...</option>
+                            <option value="1">Speck</option>
+                            <option value="2">Five</option>
+                            <option value="3">Bornfight</option>
+                            <option value="4">Agency 04</option>
+                            </Select>
+                            {formik.touched.firm && formik.errors.firm
+                                ? <InputError>{formik.errors.firm}</InputError>
+                                : null
+                            }
+                        </FormRow>
+                    </FormColumn>
                     <FormRow>
-                        <InputLabel htmlFor='date'>Date</InputLabel>
-                        <InputText
-                            id='date'
-                            type='date'
-                            {...formik.getFieldProps('date')}
-                        />
-                        {formik.touched.date && formik.errors.date
-                            ? <InputError>{formik.errors.date}</InputError>
-                            : null
-                        }
-                    </FormRow>
-                    <FormRow>
-                        <InputLabel htmlFor='timeFrom'>Time from</InputLabel>
-                        <InputText
-                            id='timeFrom'
-                            type='time'
-                            {...formik.getFieldProps('timeFrom')}
-                        />
-                        {formik.touched.timeFrom && formik.errors.timeFrom
-                            ? <InputError>{formik.errors.timeFrom}</InputError>
-                            : null
-                        }
-                    </FormRow>
-                    <FormRow>
-                        <InputLabel htmlFor='timeTo'>Time to</InputLabel>
-                        <InputText
-                            id='timeTo'
-                            type='time'
-                            {...formik.getFieldProps('timeTo')}
-                        />
-                        {formik.touched.timeTo && formik.errors.timeTo
-                            ? <InputError>{formik.errors.timeTo}</InputError>
-                            : null
-                        }
-                    </FormRow>
-                    <FormRow>
-                        <InputLabel htmlFor='capacity'>Capacity</InputLabel>
-                        <InputText
-                            id='capacity'
-                            type='number'
-                            {...formik.getFieldProps('capacity')}
-                        />
-                        {formik.touched.capacity && formik.errors.capacity
-                            ? <InputError>{formik.errors.capacity}</InputError>
-                            : null
-                        }
-                    </FormRow>
-                    <FormRow>
-                        <InputLabel htmlFor='firm'>Firm</InputLabel>
-                        <InputText
-                            id='firm'
-                            type='text'
-                            {...formik.getFieldProps('firm')}
-                        />
-                        {formik.touched.firm && formik.errors.firm
-                            ? <InputError>{formik.errors.firm}</InputError>
-                            : null
-                        }
+                        <ButtonSubmit type="submit">Add Event</ButtonSubmit>
                     </FormRow>
                 </Form>
-            <button>Add Event</button>
+            </Modal>
+            <ButtonAddEvent onClick={() => setModalIsOpen(true)}>Add Event</ButtonAddEvent>
+            {events.length > 0
+            ?
+            <TableWrapper>
+                <TableBody>
+                    <Tr>
+                        <Th>ID</Th>
+                        <Th>Title</Th>
+                        <Th>Date</Th>
+                        <Th>Time from</Th>
+                        <Th>Time to</Th>
+                        <Th>Capacity</Th>
+                        <Th>Company</Th>
+                        <Th></Th>
+                    </Tr>
+                </TableBody>
+            </TableWrapper>
+            : <TableEmpty>There are no events yet!</TableEmpty>}
+            
         </>
     )
 }
