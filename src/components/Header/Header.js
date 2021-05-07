@@ -8,7 +8,7 @@ import {
 	Nav,
 	NavItem,
 } from './HeaderStyle';
-import  Hamburger from '../Hamburger/Hamburger';
+import Hamburger from '../Hamburger/Hamburger';
 
 const links = {
 	Home: 'Home',
