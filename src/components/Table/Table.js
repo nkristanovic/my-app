@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Modal from '../Modal/Modal';
+import { MdDelete } from 'react-icons/md';
 import {
     Form,
     FormRow,
@@ -17,9 +18,11 @@ import {
 import {
     Tr,
     Th,
+    TableHead,
     TableBody,
     TableWrapper,
-    TableEmpty
+    TableEmpty,
+    Td
 } from './TableStyle';
 const Table = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -35,7 +38,7 @@ const Table = () => {
             timeFrom: '',
             timeTo: '',
             capacity: '',
-            firm: ''
+            company: ''
         },
         validationSchema: Yup.object ({
             title: Yup.string()
@@ -52,16 +55,22 @@ const Table = () => {
                 .required('Time to is requried'),
             capacity: Yup.number()
                 .required('Capacity is requried'),
-            firm: Yup.string()
-                .required('Firm is requried'),    
+            company: Yup.string()
+                .required('Company is requried'),    
         }),
         onSubmit: values => {
-            setEvents ({
-                ...events,
-                values
-            });
+            setEvents (
+                 [...events, values]
+            );
+            setModalIsOpen(false);
         },
     });
+
+    const deleteRow = index => {
+        let NewEvents = [...events];
+        NewEvents.splice(index, 1);
+        setEvents(NewEvents);
+    };
     
     return (
         <>
@@ -98,10 +107,10 @@ const Table = () => {
                                 {...formik.getFieldProps('category')}
                             >
                             <option value="">Select...</option>
-                            <option value="1">#marketing</option>
-                            <option value="2">#design</option>
-                            <option value="3">#frontend</option>
-                            <option value="4">#backend</option>
+                            <option value="Marketing">#marketing</option>
+                            <option value="Design">#design</option>
+                            <option value="Frontend">#frontend</option>
+                            <option value="Backend">#backend</option>
                             </Select>
                             {formik.touched.category && formik.errors.category
                                 ? <InputError>{formik.errors.category}</InputError>
@@ -157,19 +166,19 @@ const Table = () => {
                             }
                         </FormRow>
                         <FormRow>
-                            <InputLabel htmlFor='firm'>Company</InputLabel>
+                            <InputLabel htmlFor='company'>Company</InputLabel>
                             <Select
-                                id='firm'
-                                {...formik.getFieldProps('firm')}
+                                id='company'
+                                {...formik.getFieldProps('company')}
                             >
                             <option value="">Select...</option>
-                            <option value="1">Speck</option>
-                            <option value="2">Five</option>
-                            <option value="3">Bornfight</option>
-                            <option value="4">Agency 04</option>
+                            <option value="Speck">Speck</option>
+                            <option value="Five">Five</option>
+                            <option value="Bornfight">Bornfight</option>
+                            <option value="Agency 04">Agency 04</option>
                             </Select>
-                            {formik.touched.firm && formik.errors.firm
-                                ? <InputError>{formik.errors.firm}</InputError>
+                            {formik.touched.company && formik.errors.company
+                                ? <InputError>{formik.errors.company}</InputError>
                                 : null
                             }
                         </FormRow>
@@ -181,9 +190,8 @@ const Table = () => {
             </Modal>
             <ButtonAddEvent onClick={() => setModalIsOpen(true)}>Add Event</ButtonAddEvent>
             {events.length > 0
-            ?
-            <TableWrapper>
-                <TableBody>
+            ? <TableWrapper>
+                <TableHead>
                     <Tr>
                         <Th>ID</Th>
                         <Th>Title</Th>
@@ -194,9 +202,23 @@ const Table = () => {
                         <Th>Company</Th>
                         <Th></Th>
                     </Tr>
+                </TableHead>
+                <TableBody>
+                    {events.map ((event, index) => 
+                    <Tr key={index}>
+                        <Td>{event.id}</Td>
+                        <Td>{event.title}</Td>
+                        <Td>{event.date}</Td>
+                        <Td>{event.timeFrom}</Td>
+                        <Td>{event.timeTo}</Td>
+                        <Td>{event.capacity}</Td>
+                        <Td>{event.company}</Td>
+                        <MdDelete onClick={() => deleteRow(index)} />
+                    </Tr>
+                    )}
                 </TableBody>
             </TableWrapper>
-            : <TableEmpty>There are no events yet!</TableEmpty>}
+            :<TableEmpty>There are no events yet!</TableEmpty>}
             
         </>
     )
