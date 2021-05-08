@@ -67,7 +67,7 @@ const Table = () => {
     });
 
     const deleteRow = index => {
-        let NewEvents = [...events];
+        const NewEvents = [...events];
         NewEvents.splice(index, 1);
         setEvents(NewEvents);
     };
