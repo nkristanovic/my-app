@@ -179,9 +179,10 @@ export const Select = styled.select `
         border-color: ${colors.yellow};
     }
 
-    @media screen and (${breakpoints.small}) {
+    @media screen and (${breakpoints.mobileLargeMax}) {
         width: 100%;
     }
+
     @media screen and (${breakpoints.desktop}) {
         font-size: 16px;
     }
