@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {
    colors,
+   breakpoints
 } from '../../lib/style/theme';
 
 export const ModalOverlay = styled.div `
@@ -16,11 +17,13 @@ export const ModalOverlay = styled.div `
    height: 100%;
    width: 100%;
    background-color: ${colors.blackOverlay};
+   overflow-y: scroll;
 `;
 
 export const Inner = styled.div `
    display: flex;
    justify-content: space-between;
+   margin-bottom: 20px;
 `;
 
 export const Title = styled.h1 `
@@ -41,13 +44,16 @@ export const ButtonModalClose = styled.button `
 
 export const ModalWrapper = styled.div `
    position: absolute;
-   width: 40%;
-   margin: 0 auto;
+   top: 5%;
+   width: 80%;
    
+   @media screen and (${breakpoints.mobileLarge}) {
+      width: auto;
+   }
 `;
 
 export const ModalBody = styled.div `
-   padding: 20px 20px;
+   padding: 10px 20px;
    border-radius: 4px;
    background-color: ${colors.white};
 `;

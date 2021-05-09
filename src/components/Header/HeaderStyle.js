@@ -31,7 +31,7 @@ export const Inner = styled.div `
         padding: 15px 25px;
     }
 
-    @media screen and (${breakpoints.desktop}) {}
+    @media screen and (${breakpoints.desktop}) {
         padding: 15px 0;
         max-width: 993px;
         margin: 0 auto;

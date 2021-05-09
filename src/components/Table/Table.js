@@ -22,7 +22,8 @@ import {
     TableBody,
     TableWrapper,
     TableEmpty,
-    Td
+    Td,
+    DeleteIcon
 } from './TableStyle';
 const Table = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -213,7 +214,9 @@ const Table = () => {
                         <Td>{event.timeTo}</Td>
                         <Td>{event.capacity}</Td>
                         <Td>{event.company}</Td>
+                        <DeleteIcon>
                         <MdDelete onClick={() => deleteRow(index)} />
+                        </DeleteIcon>
                     </Tr>
                     )}
                 </TableBody>

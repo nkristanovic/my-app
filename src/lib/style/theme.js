@@ -1,5 +1,7 @@
 export const breakpoints = {
+    small: 'max-width: 575px',
     mobileLarge: 'min-width: 576px',
+    mobileLargeMax: 'max-width: 767px',
     tablet: 'min-width: 768px',
     desktop: 'min-width: 1024px',
     desktopLarge: 'min-width: 1300px'

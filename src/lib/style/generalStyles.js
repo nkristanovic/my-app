@@ -158,15 +158,19 @@ export const ButtonSubmit = styled.button `
 `;
 
 export const FormColumn = styled.div `
-    display: flex;
-    gap: 10px;
+    
+    @media screen and (${breakpoints.tablet}) {
+        display: flex;
+        gap: 10px;
+    }
 `;
 
 export const Select = styled.select `
     border: 1px solid ${colors.lightGrey};
     border-radius: 6px;
     line-height: 40px;
-    padding: 10px 85px 10px 5px;
+    padding: 10px 90px 10px 5px;
+    text-align: left;
     outline: none;
     font-size: 14px;
     font-family: 'Monteserrat', sans-serif;
@@ -175,6 +179,9 @@ export const Select = styled.select `
         border-color: ${colors.yellow};
     }
 
+    @media screen and (${breakpoints.small}) {
+        width: 100%;
+    }
     @media screen and (${breakpoints.desktop}) {
         font-size: 16px;
     }
@@ -188,14 +195,23 @@ export const Select = styled.select `
 
 export const ButtonAddEvent = styled.button `
     ${ButtonDefault};
-    
-    width: 10%;
-    font-size: 14px;
+    width: 25%;
+    font-size: 12px;
     background: ${colors.white};
     color: ${colors.black};
     line-height: 30px;
     text-align: center;
+    margin-bottom: 15px;
     border: 1px solid ${colors.darkGrey};
     border-radius: 6px;
-    margin-left: 2%;
+
+    @media screen and (${breakpoints.mobileLarge}) {
+        font-size: 14px;
+        width: 20%;
+    }
+
+    @media screen and (${breakpoints.desktopLarge}) {
+        font-size: 16px;
+        width: 15%;
+    }
 `;
