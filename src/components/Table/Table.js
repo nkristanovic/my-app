@@ -59,11 +59,12 @@ const Table = () => {
             company: Yup.string()
                 .required('Company is requried'),    
         }),
-        onSubmit: values => {
+        onSubmit: (values, { resetForm }) => {
             setEvents (
                  [...events, values]
             );
             setModalIsOpen(false);
+            resetForm();
         },
     });
 
