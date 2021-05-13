@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import  { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import Header from './components/Header/Header'; 
@@ -12,7 +12,14 @@ import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
+
 const App = () => {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] =useState(false);
+  useEffect(() => {
+    localStorage.getItem('isAdmin');
+    localStorage.getItem('authToken');
+  }, []);
     return (
       <>
        <BrowserRouter>

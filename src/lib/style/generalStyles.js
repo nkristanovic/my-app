@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import {
     breakpoints,
@@ -214,5 +215,21 @@ export const ButtonAddEvent = styled.button `
     @media screen and (${breakpoints.desktopLarge}) {
         font-size: 16px;
         width: 15%;
+    }
+`;
+
+export const SuccessMessage = styled.p`
+    margin: 0 auto;
+    padding: 15px;
+    margin-bottom: 32px;
+    border-radius: 6px;
+    background: ${colors.successBackground};
+    color: ${colors.success};
+    ${props => props.isError && `
+        background: ${colors.errorBackground};
+        color: ${colors.error};
+    `};
+    @media screen and (${breakpoints.mobileLarge}){
+        max-width: 400px;
     }
 `;

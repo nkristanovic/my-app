@@ -9,11 +9,18 @@ import {
     InputLabel,
     InputText,
     InputError,
-    ButtonSubmit
+    ButtonSubmit,
+    SuccessMessage
 } from '../../lib/style/generalStyles'
+import { loginUser } from '../../api/login';
+import { getAllUser } from '../../api/user';
 
 const Login = () => {
     const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
+    const [isRequestFinished, setIsRequestFinished] = useState(false);
+
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -27,19 +34,42 @@ const Login = () => {
                 .min(8, 'Password must be at least 8 characters long')
                 .required('Password is required'),
         }),
-        onSubmit: values => {
+        onSubmit: async (values, { resetForm }) => {
             setIsLoading(true);
+            setIsError(false);
+            setIsRequestFinished(false);
 
-            setTimeout(() => {
+            try
+            {
+                const response = await loginUser(values);
+                const users = await getAllUser(response.token);
+                const isAdmin = users.find(user => user.email === values.email).isAdmin;
+                
+                localStorage.setItem('authToken', response.token);
+                localStorage.setItem('isAdmin', isAdmin);
+                
+                setSuccessMessage('User is registered successfully!');
+                resetForm({});
+                setTimeout(() => {
+                    setIsRequestFinished(false);
+                }, 4000);
+
+            } catch (err) {
+                setIsError(true);
+                setSuccessMessage('Something went wrong!');
+            } finally {
                 setIsLoading(false);
-                alert(JSON.stringify(values));
-            }, 1000);
+                setIsRequestFinished(true);
+            }
         },
     });
 
     return (
         <>
             <Section title="Login" withoutTopPadding={true}>
+            {isRequestFinished &&
+                <SuccessMessage isError={isError}>{successMessage}</SuccessMessage>
+                }
                 {!isLoading
                     ? <Form onSubmit={formik.handleSubmit}>
                         <FormRow>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { registerUser } from '../../api/register';
 import Section from '../../components/Section/Section';
 import LoaderBars from '../../components/Loader/Loader';
 import {
@@ -11,11 +12,15 @@ import {
     InputText,
     InputCheckbox,
     InputError,
-    ButtonSubmit
+    ButtonSubmit,
+    SuccessMessage
 } from '../../lib/style/generalStyles';
 
 const Register = () => {
     const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
+    const [isRequestFinished, setIsRequestFinished] = useState(false);
 
     const formik = useFormik({
         initialValues: {
@@ -46,19 +51,45 @@ const Register = () => {
                     }
                 )
         }),
-        onSubmit: values => {
+        onSubmit: (values, {resetForm}) => {
             setIsLoading(true);
+            setIsRequestFinished(false);
+
+            const user = {
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email,
+                password: values.password,
+                isAdmin: values.isAdmin
+            };
+
+            registerUser(user)
+                .then(res => {
+                    resetForm({});
+                    setIsError(false);
+                    setSuccessMessage('User is registered successfully!');
+                    setTimeout(() => {
+                        setIsRequestFinished(false);
+                    }, 4000);
+                })
+                .catch(err => {
+                    setIsError(true);
+                    setSuccessMessage('User registration failed!');
+                })
+                .finally(() => {
+                    setIsLoading(false);
+                    setIsRequestFinished(true);
+                })
             
-            setTimeout(() => {
-                setIsLoading(false);
-                alert(JSON.stringify(values));
-            }, 1000);
         },
     });
 
     return (
         <>
             <Section title="Register" withoutTopPadding={true}>
+            {isRequestFinished &&
+                <SuccessMessage isError={isError}>{successMessage}</SuccessMessage>
+                }
                 {!isLoading
                     ? <Form onSubmit={formik.handleSubmit}>
                         <FormRow>
