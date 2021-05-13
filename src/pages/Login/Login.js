@@ -18,7 +18,6 @@ const Login = () => {
         initialValues: {
             email: '',
             password: '',
-            isAdmin: false
         },
         validationSchema: Yup.object ({
             email: Yup.string()
