@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LogoImage from '../../assets/images/logo.png';
 import {
 	HeaderWrapper,
@@ -19,7 +19,16 @@ const links = {
 }
 
 const Header = () => {
+	const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin'));
+  	const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('authToken'));
 
+	const logout = () => {
+        localStorage.clear();
+		window.location.href = "/login";
+		isAdmin(false);
+		isLoggedIn(false);
+    }
+	
     return (
         <HeaderWrapper>
 			<Inner>
@@ -30,9 +39,14 @@ const Header = () => {
 				<Nav>
 					<NavItem activeClassName="active" exact to="/">{links.Home}</NavItem>
 					<NavItem activeClassName="active" exact to="/events">{links.Events}</NavItem>
+				{!isLoggedIn ?
+				<>
 					<NavItem activeClassName="active" exact to="/register">{links.Register}</NavItem>
-					<NavItem activeClassName="active" exact to="/login">{links.Login}</NavItem>
-					<NavItem activeClassName="active" exact to="/admin">{links.Admin}</NavItem>
+					<NavItem activeClassName="active" exact to="/login" >{links.Login}</NavItem>
+				</>
+				:<NavItem  exact to="/logout" onClick={logout}>Logout</NavItem>}
+				{isLoggedIn && isAdmin  ? <NavItem activeClassName="active" exact to="/admin">{links.Admin}</NavItem>
+				: null}
 				</Nav>
 			</Inner>
 		</HeaderWrapper>

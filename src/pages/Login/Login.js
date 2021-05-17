@@ -20,7 +20,7 @@ const Login = () => {
     const [isError, setIsError] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
     const [isRequestFinished, setIsRequestFinished] = useState(false);
-
+    
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -38,17 +38,16 @@ const Login = () => {
             setIsLoading(true);
             setIsError(false);
             setIsRequestFinished(false);
-
+            
             try
             {
                 const response = await loginUser(values);
                 const users = await getAllUser(response.token);
                 const isAdmin = users.find(user => user.email === values.email).isAdmin;
-                
                 localStorage.setItem('authToken', response.token);
                 localStorage.setItem('isAdmin', isAdmin);
                 
-                setSuccessMessage('User is registered successfully!');
+                setSuccessMessage('User is login successfully!');
                 resetForm({});
                 setTimeout(() => {
                     setIsRequestFinished(false);
@@ -67,7 +66,7 @@ const Login = () => {
     return (
         <>
             <Section title="Login" withoutTopPadding={true}>
-            {isRequestFinished &&
+            {isRequestFinished && 
                 <SuccessMessage isError={isError}>{successMessage}</SuccessMessage>
                 }
                 {!isLoading
@@ -98,7 +97,7 @@ const Login = () => {
                         </FormRow>
                         <ButtonSubmit type='submit'>Login</ButtonSubmit>
                     </Form>
-                : <LoaderBars />}
+                : <LoaderBars />} 
             </Section>
         </>
     )

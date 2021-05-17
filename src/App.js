@@ -15,16 +15,24 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 const App = () => {
   const [isAdmin, setIsAdmin] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] =useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
-    localStorage.getItem('isAdmin');
-    localStorage.getItem('authToken');
+    if (localStorage.getItem('isAdmin') === 'true') {
+      setIsAdmin (true);
+    } else {
+      setIsAdmin (false)
+    };
+    if (localStorage.getItem('authToken')) {
+      setIsLoggedIn (true);
+    } else {
+      setIsLoggedIn (false)
+    };
   }, []);
     return (
       <>
        <BrowserRouter>
           <ScrollToTop />
-          <Header />
+          <Header isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
           <Main>
           <Switch>
             <Route exact path="/" component={Home} />
