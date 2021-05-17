@@ -15,7 +15,7 @@ import {
 import { loginUser } from '../../api/login';
 import { getAllUser } from '../../api/user';
 
-const Login = () => {
+const Login = ({ setIsLoggedIn, setIsAdmin }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
@@ -44,9 +44,12 @@ const Login = () => {
                 const response = await loginUser(values);
                 const users = await getAllUser(response.token);
                 const isAdmin = users.find(user => user.email === values.email).isAdmin;
-                localStorage.setItem('authToken', response.token);
+                localStorage.setItem('ayuthToken', response.token);
                 localStorage.setItem('isAdmin', isAdmin);
-                
+
+                setIsLoggedIn(true);
+                setIsAdmin(isAdmin);
+
                 setSuccessMessage('User is login successfully!');
                 resetForm({});
                 setTimeout(() => {

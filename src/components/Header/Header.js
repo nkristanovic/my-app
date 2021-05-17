@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LogoImage from '../../assets/images/logo.png';
 import {
 	HeaderWrapper,
@@ -18,15 +18,13 @@ const links = {
 	Admin: 'Admin'
 }
 
-const Header = () => {
-	const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin'));
-  	const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('authToken'));
-
+const Header = ({ isLoggedIn, isAdmin, setIsLoggedIn, setIsAdmin }) => {
+	
 	const logout = () => {
         localStorage.clear();
 		window.location.href = "/login";
-		isAdmin(false);
-		isLoggedIn(false);
+		setIsAdmin(false);
+		setIsLoggedIn(false);
     }
 	
     return (
@@ -35,7 +33,7 @@ const Header = () => {
 				<LogoContainer to="/">
 					<Logo src={LogoImage} alt="Logo" />
 				</LogoContainer>
-                <Hamburger />
+                <Hamburger isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
 				<Nav>
 					<NavItem activeClassName="active" exact to="/">{links.Home}</NavItem>
 					<NavItem activeClassName="active" exact to="/events">{links.Events}</NavItem>

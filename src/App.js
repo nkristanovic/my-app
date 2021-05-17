@@ -16,18 +16,14 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 const App = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   useEffect(() => {
-    if (localStorage.getItem('isAdmin') === 'true') {
-      setIsAdmin (true);
-    } else {
-      setIsAdmin (false)
-    };
-    if (localStorage.getItem('authToken')) {
-      setIsLoggedIn (true);
-    } else {
-      setIsLoggedIn (false)
-    };
-  }, []);
+    console.log(isAdmin);
+    console.log(isLoggedIn);
+    localStorage.getItem('authToken') !== null && setIsLoggedIn(true);
+    localStorage.getItem('isAdmin') !== null && setIsAdmin(JSON.parse(localStorage.getItem('isAdmin')));
+  }, [isAdmin, isLoggedIn]);
+
     return (
       <>
        <BrowserRouter>
@@ -39,7 +35,7 @@ const App = () => {
             <Route path="/events" component={Events} />
             <Route path="/event/:id" component={Event} />
             <Route path="/register" component={Register} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" render={() => <Login setIsAdmin={setIsAdmin} setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/admin" component={Admin} />
           </Switch>
           </Main>

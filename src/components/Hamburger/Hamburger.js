@@ -7,16 +7,14 @@ import {
 } from './HamburgerStyle';
 
 
-const Hamburger = () => {
+const Hamburger = ({ isLoggedIn, isAdmin, setIsLoggedIn, setIsAdmin }) => {
   const [open, setOpen] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin'));
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('authToken'));
 
 	const logout = () => {
-        localStorage.clear();
+    localStorage.clear();
 		window.location.href = "/login";
-		isAdmin(false);
-		isLoggedIn(false);
+		setIsAdmin(false);
+		setIsLoggedIn(false);
     }
   
   return (
