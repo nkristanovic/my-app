@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Section from '../../components/Section/Section';
@@ -14,13 +14,14 @@ import {
 } from '../../lib/style/generalStyles'
 import { loginUser } from '../../api/login';
 import { getAllUser } from '../../api/user';
+import { AuthContext } from '../../components/Context/AuthContext';
 
-const Login = ({ setIsLoggedIn, setIsAdmin }) => {
+const Login = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
     const [isRequestFinished, setIsRequestFinished] = useState(false);
-    
+    const { setIsAdmin, setIsLoggedIn } = useContext(AuthContext);
     const formik = useFormik({
         initialValues: {
             email: '',
