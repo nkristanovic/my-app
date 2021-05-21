@@ -22,7 +22,7 @@ const Header = ({ isLoggedIn, isAdmin, setIsLoggedIn, setIsAdmin }) => {
 	
 	const logout = () => {
         localStorage.clear();
-		window.location.href = "/login";
+		window.location.href = "/";
 		setIsAdmin(false);
 		setIsLoggedIn(false);
     }

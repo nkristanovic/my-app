@@ -11,19 +11,17 @@ import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
-
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 const App = () => {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin') !== null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    console.log(isAdmin);
-    console.log(isLoggedIn);
     localStorage.getItem('authToken') !== null && setIsLoggedIn(true);
     localStorage.getItem('isAdmin') !== null && setIsAdmin(JSON.parse(localStorage.getItem('isAdmin')));
   }, [isAdmin, isLoggedIn]);
-
+  
     return (
       <>
        <BrowserRouter>
@@ -36,7 +34,7 @@ const App = () => {
             <Route path="/event/:id" component={Event} />
             <Route path="/register" component={Register} />
             <Route path="/login" render={() => <Login setIsAdmin={setIsAdmin} setIsLoggedIn={setIsLoggedIn} />} />
-            <Route path="/admin" component={Admin} />
+            <ProtectedRoute  isLoggedIn={isLoggedIn} isAdmin={isAdmin} path="/admin" component={Admin} />
           </Switch>
           </Main>
           <Footer />

@@ -44,12 +44,11 @@ const Login = ({ setIsLoggedIn, setIsAdmin }) => {
                 const response = await loginUser(values);
                 const users = await getAllUser(response.token);
                 const isAdmin = users.find(user => user.email === values.email).isAdmin;
-                localStorage.setItem('ayuthToken', response.token);
+                localStorage.setItem('authToken', response.token);
                 localStorage.setItem('isAdmin', isAdmin);
 
                 setIsLoggedIn(true);
                 setIsAdmin(isAdmin);
-
                 setSuccessMessage('User is login successfully!');
                 resetForm({});
                 setTimeout(() => {
