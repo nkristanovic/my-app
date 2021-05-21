@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import  { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import Header from './components/Header/Header'; 
@@ -12,15 +12,16 @@ import Login from './pages/Login/Login';
 import Admin from './pages/Admin/Admin';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import { AuthContext } from './components/Context/AuthContext';
 
 const App = () => {
-  const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin') !== null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isAdmin, setIsAdmin } = useContext(AuthContext);
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
   useEffect(() => {
     localStorage.getItem('authToken') !== null && setIsLoggedIn(true);
     localStorage.getItem('isAdmin') !== null && setIsAdmin(JSON.parse(localStorage.getItem('isAdmin')));
-  }, [isAdmin, isLoggedIn]);
+  }, [isAdmin, setIsAdmin, setIsLoggedIn, isLoggedIn]);
   
     return (
       <>

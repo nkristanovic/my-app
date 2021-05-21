@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
 
-const ProtectedRoute = ({ component: Admin,  isLoggedIn,  isAdmin,  ...rest }) => {
+const ProtectedRoute = ({ component: Admin, ...rest }) => {
+  const { isAdmin } = useContext(AuthContext);
+  
   return (
     <Route {...rest} render={
       (props) => {
-            return isAdmin ? <Admin isAdmin={isAdmin} isLoggedIn={isLoggedIn} />
+            return isAdmin ? <Admin isAdmin={isAdmin}/>
             : <Redirect to={
                 {
                     path:'/',

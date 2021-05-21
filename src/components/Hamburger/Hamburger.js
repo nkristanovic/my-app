@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../Context/AuthContext';
 import {
    NavHamburger,
    NavHamburgerLine,
@@ -7,8 +8,10 @@ import {
 } from './HamburgerStyle';
 
 
-const Hamburger = ({ isLoggedIn, isAdmin, setIsLoggedIn, setIsAdmin }) => {
+const Hamburger = ({ setIsLoggedIn, setIsAdmin }) => {
   const [open, setOpen] = useState(false);
+  const { isLoggedIn } = useContext(AuthContext);
+	const { isAdmin } = useContext(AuthContext);
 
 	const logout = () => {
     localStorage.clear();

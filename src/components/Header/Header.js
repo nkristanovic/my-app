@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import LogoImage from '../../assets/images/logo.png';
 import {
 	HeaderWrapper,
@@ -9,6 +9,7 @@ import {
 	NavItem,
 } from './HeaderStyle';
 import Hamburger from '../Hamburger/Hamburger';
+import { AuthContext } from '../Context/AuthContext';
 
 const links = {
 	Home: 'Home',
@@ -18,7 +19,9 @@ const links = {
 	Admin: 'Admin'
 }
 
-const Header = ({ isLoggedIn, isAdmin, setIsLoggedIn, setIsAdmin }) => {
+const Header = ({ setIsLoggedIn, setIsAdmin }) => {
+	const { isLoggedIn } = useContext(AuthContext);
+	const { isAdmin } = useContext(AuthContext);
 	
 	const logout = () => {
         localStorage.clear();
