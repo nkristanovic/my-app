@@ -1,3 +1,11 @@
+# admin
+username: admin@admin.com
+password: 12345678
+
+# studnet
+username: nikola.kritanovic@gmail.com
+password: 12345678
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
