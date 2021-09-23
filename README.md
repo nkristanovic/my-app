@@ -3,7 +3,7 @@ username: admin@admin.com
 password: 12345678
 
 # student
-username: nikola.kritanovic@gmail.com
+username: nikola.kristanovic@gmail.com
 password: 12345678
 
 # Getting Started with Create React App
